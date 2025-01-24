@@ -5,11 +5,8 @@ import { useCart } from "../../context/CartContext";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cartItems } = useCart();
-  const cartItemsCount = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const { cart } = useCart();
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
   const location = useLocation();
 
   const isActive = (path) => {
@@ -54,9 +51,9 @@ export default function Navbar() {
               className="relative p-2 text-gray-600 hover:text-primary transition-colors hover:bg-gray-100/80 rounded-full"
             >
               <ShoppingCart className="w-5 h-5" />
-              {cartItemsCount > 0 && (
+              {cartItemCount > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">
-                  {cartItemsCount}
+                  {cartItemCount}
                 </span>
               )}
             </Link>

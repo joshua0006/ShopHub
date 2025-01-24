@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "../../utils/animations";
+import { ArrowRight, Sparkles } from "lucide-react";
+import ProductCard from "../product/ProductCard";
 import { products } from "../../data/products";
-import { Flame } from "lucide-react";
 
 export default function FeaturedProducts() {
   // Get 4 random products for featured section
@@ -14,108 +14,97 @@ export default function FeaturedProducts() {
       discount: Math.floor(Math.random() * 30) + 20, // Random discount between 20-50%
     }));
 
+  const handleImageError = (e) => {
+    e.target.src = product.fallbackImage || FALLBACK_IMAGE;
+  };
+
   return (
-    <section className="py-32 bg-gradient-to-b from-white via-gray-50/50 to-white">
+    <section className="relative py-24">
       <div className="container">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        {/* Decorative Elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-white/10 rounded-full blur-3xl" />
+
+        {/* Header Section */}
+        <div className="relative">
           <motion.div
-            variants={fadeInUp}
-            className="flex items-center justify-center gap-2 mb-3"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12"
           >
-            <Flame className="w-6 h-6 text-primary animate-pulse" />
-            <span className="text-primary font-semibold">Hot Deals</span>
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkles className="w-5 h-5 text-blue-500" />
+                <span className="text-blue-500 font-medium">
+                  Featured Collection
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 drop-shadow-sm">
+                Trending Products
+              </h2>
+              <p className="text-blue-600 text-lg">
+                Discover our handpicked selection of premium products that are
+                making waves in the market
+              </p>
+            </div>
+            <Link
+              to="/products"
+              className="group inline-flex items-center gap-2 bg-blue-500/10 backdrop-blur-sm px-6 py-3 rounded-xl
+                text-blue-600 font-medium hover:bg-blue-500/20 transition-all duration-300 border border-blue-500/10 hover:border-blue-500/30"
+            >
+              View All Products
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </motion.div>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"
-          >
-            Featured Products
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-gray-600 max-w-2xl mx-auto"
-          >
-            Don't miss out on these amazing deals! Limited time offers on our
-            best-selling products.
-          </motion.p>
-        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {featuredProducts.map((product) => (
-            <motion.div key={product.id} variants={fadeInUp} className="group">
-              <Link
-                to={`/products/${product.id}`}
-                className="block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredProducts.map((product, index) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
-                {/* Discount Badge */}
-                <div className="relative">
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
-                    -{product.discount}%
-                  </div>
-
-                  {/* Image Container */}
-                  <div className="aspect-square overflow-hidden bg-gray-100 relative">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent" />
-                  </div>
-                </div>
-
-                {/* Product Info */}
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {product.description}
-                  </p>
-
-                  {/* Price */}
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl font-bold text-primary">
-                      $
-                      {(product.price * (1 - product.discount / 100)).toFixed(
-                        2
-                      )}
-                    </span>
-                    <span className="text-sm text-gray-500 line-through">
-                      ${product.price}
-                    </span>
-                    <span className="ml-auto text-secondary text-sm font-medium">
-                      Save $
-                      {(product.price * (product.discount / 100)).toFixed(2)}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Call to Action */}
-                <div className="px-6 pb-6">
-                  <div className="bg-primary/10 text-primary rounded-lg py-2 text-center text-sm font-medium group-hover:bg-primary group-hover:text-white transition-colors">
-                    View Deal
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                <ProductCard product={product} />
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* View All Button */}
-        <motion.div variants={fadeInUp} className="text-center mt-12">
-          <Link
-            to="/products"
-            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-lg border-2 border-primary hover:bg-primary hover:text-white transition-colors font-medium"
-          >
-            View All Products
-          </Link>
+        {/* Newsletter Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24 relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 overflow-hidden border border-white/10"
+        >
+          <div className="absolute inset-0 bg-grid-white/[0.02]" />
+          <div className="relative max-w-xl mx-auto text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-sm">
+              Stay Updated
+            </h3>
+            <p className="text-blue-100 mb-6">
+              Subscribe to our newsletter to receive updates about new products,
+              special offers, and exclusive discounts.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/10 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent
+                  placeholder:text-blue-200 text-white backdrop-blur-sm"
+              />
+              <button
+                type="submit"
+                className="bg-white text-blue-900 px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors font-medium whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
         </motion.div>
       </div>
     </section>

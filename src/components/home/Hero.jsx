@@ -27,7 +27,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-950 via-blue-800 to-primary overflow-hidden min-h-[600px] flex items-center">
+    <section className="relative bg-gradient-to-br from-blue-950 via-blue-800 to-blue-900 overflow-hidden min-h-[600px] flex items-center">
       <div className="absolute inset-0 bg-grid-white/[0.1] -z-1" />
       <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-900/40 to-transparent" />
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441986300917-64674bd600d8')] bg-cover bg-center opacity-10" />

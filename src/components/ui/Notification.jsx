@@ -17,7 +17,7 @@ export default function Notification({ message, onClose }) {
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 60 }}
         exit={{ opacity: 0, y: -20 }}
         className="fixed top-4 right-4 z-50 bg-white shadow-lg rounded-lg px-4 py-3 flex items-center gap-2"
       >

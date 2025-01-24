@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function ImageCarousel({ images }) {
+export default function ImageCarousel({ images, alt }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleImageError = (e) => {
+    // Set a fallback image when the original image fails to load
+    e.target.src = "/placeholder-image.jpg"; // Replace with your fallback image path
+    e.target.onerror = null; // Prevents infinite loop if fallback also fails
+  };
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
@@ -22,10 +28,11 @@ export default function ImageCarousel({ images }) {
 
   return (
     <div className="space-y-4">
-      <div className="relative h-[500px] overflow-hidden rounded-lg bg-gray-100 group">
+      <div className="relative h-[500px] overflow-hidden rounded-lg bg-transparent group">
         <img
           src={images[currentIndex]}
-          alt={`Product image ${currentIndex + 1}`}
+          alt={`${alt} ${currentIndex + 1}`}
+          onError={handleImageError}
           className="w-full h-full object-contain hover:scale-105 transition duration-300"
         />
 
@@ -59,6 +66,7 @@ export default function ImageCarousel({ images }) {
             <img
               src={image}
               alt={`Thumbnail ${index + 1}`}
+              onError={handleImageError}
               className="w-full h-full object-cover"
             />
           </button>

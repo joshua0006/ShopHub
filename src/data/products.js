@@ -1,3 +1,5 @@
+const FALLBACK_IMAGE = "https://placehold.co/500x500?text=Image+Not+Found";
+
 export const products = [
   {
     id: 1,
@@ -6,6 +8,7 @@ export const products = [
     category: "Electronics",
     description: "High-quality wireless headphones with noise cancellation.",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
       "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500",
@@ -20,6 +23,7 @@ export const products = [
     category: "Electronics",
     description: "Feature-rich smartwatch with health tracking capabilities.",
     image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
       "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500",
@@ -35,6 +39,7 @@ export const products = [
     category: "Fashion",
     description: "Durable and stylish backpack for everyday use.",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
       "https://images.unsplash.com/photo-1581605405669-8e6c62159d64?w=500",
@@ -50,6 +55,7 @@ export const products = [
     category: "Fashion",
     description: "Comfortable running shoes with advanced cushioning.",
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",
@@ -65,6 +71,7 @@ export const products = [
     category: "Home & Living",
     description: "Programmable coffee maker with thermal carafe.",
     image: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=500",
       "https://images.unsplash.com/photo-1520232644591-c5e83350f9c0?w=500",
@@ -80,6 +87,7 @@ export const products = [
     category: "Home & Living",
     description: "Modern LED desk lamp with adjustable brightness.",
     image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",
       "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500",
@@ -94,7 +102,9 @@ export const products = [
     price: 59.99,
     category: "Electronics",
     description: "Portable Bluetooth speaker with high-quality sound.",
-    image: "https://images.unsplash.com/photo-1495186113773-72cf345623ee?w=500",
+    image:
+      "https://images.unsplash.com/photo-1518188689134-aa7854b27574?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1495186113773-72cf345623ee?w=500",
       "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
@@ -109,7 +119,9 @@ export const products = [
     price: 699.99,
     category: "Electronics",
     description: "Stunning 4K Ultra HD TV with HDR and smart features.",
-    image: "https://images.unsplash.com/photo-1506347201773-1ff4d38bc1e1?w=500",
+    image:
+      "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1506347201773-1ff4d38bc1e1?w=500",
       "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500",
@@ -125,6 +137,7 @@ export const products = [
     category: "Electronics",
     description: "Ergonomic gaming mouse with customizable buttons.",
     image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
       "https://images.unsplash.com/photo-1586349906319-47f6c1c9ce19?w=500",
@@ -140,6 +153,7 @@ export const products = [
     category: "Electronics",
     description: "Adjustable laptop stand for better ergonomics.",
     image: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=500",
       "https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?w=500",
@@ -155,6 +169,7 @@ export const products = [
     category: "Fashion",
     description: "Stylish and premium quality leather jacket.",
     image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     images: [
       "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
       "https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=500",
@@ -169,7 +184,9 @@ export const products = [
     price: 69.99,
     category: "Fashion",
     description: "Casual sneakers for everyday wear.",
-    image: "https://images.unsplash.com/photo-1572635147371-1e160e20862f?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1682125177822-63c27a3830ea?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 13,
@@ -177,7 +194,9 @@ export const products = [
     price: 159.99,
     category: "Fashion",
     description: "Warm and cozy winter coat for cold weather.",
-    image: "https://images.unsplash.com/photo-1556870612-19ff5a99f6a4?w=500",
+    image:
+      "https://images.unsplash.com/photo-1521060413616-2a0cf7c2b98a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 14,
@@ -185,7 +204,9 @@ export const products = [
     price: 49.99,
     category: "Electronics",
     description: "Track your fitness activities with this sleek tracker.",
-    image: "https://images.unsplash.com/photo-1516917668364-cd313507994d?w=500",
+    image:
+      "https://images.unsplash.com/photo-1557935728-e6d1eaabe558?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 15,
@@ -193,7 +214,9 @@ export const products = [
     price: 39.99,
     category: "Home & Living",
     description: "Quick-boiling electric kettle with automatic shut-off.",
-    image: "https://images.unsplash.com/photo-1505742207458-fd07442e8f94?w=500",
+    image:
+      "https://images.unsplash.com/photo-1647619124290-10fb9273b4b5?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 16,
@@ -201,7 +224,9 @@ export const products = [
     price: 49.99,
     category: "Home & Living",
     description: "Decorative wall art to brighten up your home.",
-    image: "https://images.unsplash.com/photo-1561405200-d7d417e98db8?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1705262413765-5fe7a310d4e6?q=80&w=1016&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 17,
@@ -210,7 +235,9 @@ export const products = [
     category: "Home & Living",
     description:
       "Smart thermostat that learns your schedule and adjusts temperatures.",
-    image: "https://images.unsplash.com/photo-1516432222671-174ff71a441b?w=500",
+    image:
+      "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U21hcnQlMjBUaGVybW9zdGF0fGVufDB8fDB8fHww",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 18,
@@ -218,7 +245,9 @@ export const products = [
     price: 179.99,
     category: "Home & Living",
     description: "Air purifier with HEPA filter to improve air quality.",
-    image: "https://images.unsplash.com/photo-1573435511600-cf54a5e55b7f?w=500",
+    image:
+      "https://images.unsplash.com/photo-1632928274371-878938e4d825?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 19,
@@ -226,7 +255,9 @@ export const products = [
     price: 39.99,
     category: "Home & Living",
     description: "Smart light bulbs with adjustable color and brightness.",
-    image: "https://images.unsplash.com/photo-1605702132777-038c2a81a998?w=500",
+    image:
+      "https://images.unsplash.com/photo-1711006155490-ec01a0ecf0de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U21hcnQlMjBMaWdodCUyMEJ1bGJzfGVufDB8fDB8fHww",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 20,
@@ -234,7 +265,9 @@ export const products = [
     price: 29.99,
     category: "Home & Living",
     description: "Soft and cozy blanket for your couch.",
-    image: "https://images.unsplash.com/photo-1594634905745-8bdb00d0e9ae?w=500",
+    image:
+      "https://images.unsplash.com/photo-1507138451611-3001135909fa?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 21,
@@ -242,7 +275,9 @@ export const products = [
     price: 249.99,
     category: "Home & Living",
     description: "High-quality outdoor grill for barbecues.",
-    image: "https://images.unsplash.com/photo-1607741150084-d5f3f35d0003?w=500",
+    image:
+      "https://images.unsplash.com/photo-1529262365544-55d1707e64e6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 22,
@@ -250,7 +285,9 @@ export const products = [
     price: 349.99,
     category: "Home & Living",
     description: "Compact portable air conditioner to cool down your space.",
-    image: "https://images.unsplash.com/photo-1603118817063-b87e62b575fa?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1670537995267-424ea54025b5?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 23,
@@ -258,7 +295,9 @@ export const products = [
     price: 49.99,
     category: "Fashion",
     description: "Comfy and stylish hoodie sweatshirt for all seasons.",
-    image: "https://images.unsplash.com/photo-1506886413037-b9338e6b4b4a?w=500",
+    image:
+      "https://images.unsplash.com/photo-1685328403755-de1d57e12e63?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 24,
@@ -266,7 +305,9 @@ export const products = [
     price: 19.99,
     category: "Fashion",
     description: "Durable and sleek smartphone case for protection.",
-    image: "https://images.unsplash.com/photo-1506748686211-8d18ef7b85ed?w=500",
+    image:
+      "https://images.unsplash.com/photo-1520970802623-5ce51ced3006?q=80&w=978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 25,
@@ -275,6 +316,7 @@ export const products = [
     category: "Fashion",
     description: "Simple and stylish cotton t-shirt.",
     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 26,
@@ -282,7 +324,9 @@ export const products = [
     price: 29.99,
     category: "Sports & Outdoors",
     description: "Non-slip yoga mat for a comfortable practice.",
-    image: "https://images.unsplash.com/photo-1552150614-f6c15e348e73?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1675155952889-abb299df1fe7?q=80&w=1029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 27,
@@ -290,7 +334,9 @@ export const products = [
     price: 159.99,
     category: "Sports & Outdoors",
     description: "4-person camping tent with waterproof features.",
-    image: "https://images.unsplash.com/photo-1551792335-bb0323d47f92?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1681169152396-f22381eae362?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 28,
@@ -298,7 +344,9 @@ export const products = [
     price: 24.99,
     category: "Sports & Outdoors",
     description: "Rechargeable LED lantern for outdoor adventures.",
-    image: "https://images.unsplash.com/photo-1516463211199-074735f94d97?w=500",
+    image:
+      "https://images.unsplash.com/photo-1725007219008-9223be69a98a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 29,
@@ -306,7 +354,9 @@ export const products = [
     price: 79.99,
     category: "Sports & Outdoors",
     description: "Professional-grade tennis racket for beginners.",
-    image: "https://images.unsplash.com/photo-1573652674151-804dbf29bde1?w=500",
+    image:
+      "https://images.unsplash.com/photo-1599280174407-fdc3e8c47856?q=80&w=1168&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 30,
@@ -314,7 +364,9 @@ export const products = [
     price: 19.99,
     category: "Sports & Outdoors",
     description: "Durable water bottle with temperature retention.",
-    image: "https://images.unsplash.com/photo-1516672351739-d8d29b2f6a85?w=500",
+    image:
+      "https://images.unsplash.com/photo-1560847468-5eef330f455a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 31,
@@ -323,7 +375,9 @@ export const products = [
     category: "Health & Wellness",
     description:
       "Professional-grade percussion massage device for muscle recovery.",
-    image: "https://images.unsplash.com/photo-1600367163359-d51d40bcb5f8?w=500",
+    image:
+      "https://images.unsplash.com/photo-1611908200005-b898ddde09cf?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 32,
@@ -331,7 +385,9 @@ export const products = [
     price: 34.99,
     category: "Health & Wellness",
     description: "Ultrasonic aromatherapy diffuser with LED mood lighting.",
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500",
+    image:
+      "https://images.unsplash.com/photo-1564278047230-a632a9d6acf4?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 33,
@@ -340,6 +396,7 @@ export const products = [
     category: "Health & Wellness",
     description: "Smart digital scale with body composition analysis.",
     image: "https://images.unsplash.com/photo-1518644961665-ed172691aaa1?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 34,
@@ -348,6 +405,7 @@ export const products = [
     category: "Beauty",
     description: "Professional ionic hair dryer with multiple heat settings.",
     image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 35,
@@ -357,6 +415,7 @@ export const products = [
     description:
       "Complete skincare routine with cleanser, toner, and moisturizer.",
     image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 36,
@@ -365,6 +424,7 @@ export const products = [
     category: "Beauty",
     description: "Professional makeup brush set with storage case.",
     image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 37,
@@ -373,6 +433,7 @@ export const products = [
     category: "Toys & Games",
     description: "Classic board game collection for family entertainment.",
     image: "https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 38,
@@ -380,7 +441,9 @@ export const products = [
     price: 59.99,
     category: "Toys & Games",
     description: "High-speed RC car with precise controls.",
-    image: "https://images.unsplash.com/photo-1595858181717-4888dc5bf310?w=500",
+    image:
+      "https://images.unsplash.com/photo-1517676109075-9a94d44145d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UmVtb3RlJTIwQ29udHJvbCUyMENhciUyMHRveXxlbnwwfHwwfHx8MA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 39,
@@ -389,6 +452,7 @@ export const products = [
     category: "Toys & Games",
     description: "Creative building blocks for endless possibilities.",
     image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 40,
@@ -397,6 +461,7 @@ export const products = [
     category: "Food & Beverages",
     description: "Premium roasted coffee beans from selected regions.",
     image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 41,
@@ -405,6 +470,7 @@ export const products = [
     category: "Food & Beverages",
     description: "Collection of premium loose leaf teas with infuser.",
     image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 42,
@@ -413,6 +479,7 @@ export const products = [
     category: "Food & Beverages",
     description: "Assorted premium chocolates in an elegant gift box.",
     image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 43,
@@ -421,6 +488,7 @@ export const products = [
     category: "Health & Wellness",
     description: "Premium protein powder and workout supplements.",
     image: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 44,
@@ -428,7 +496,9 @@ export const products = [
     price: 34.99,
     category: "Beauty",
     description: "Jade and rose quartz facial rollers for skincare.",
-    image: "https://images.unsplash.com/photo-1628688346676-d6b5d8c7ef9a?w=500",
+    image:
+      "https://images.unsplash.com/photo-1585652757173-57de5e9fab42?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 45,
@@ -437,6 +507,7 @@ export const products = [
     category: "Toys & Games",
     description: "Complex strategy board game for advanced players.",
     image: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=500",
+    fallbackImage: FALLBACK_IMAGE,
   },
   {
     id: 46,
@@ -444,7 +515,9 @@ export const products = [
     price: 49.99,
     category: "Food & Beverages",
     description: "Selection of premium craft beers from local breweries.",
-    image: "https://images.unsplash.com/photo-1584433306650-03d4a764ac45?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1695558758845-fa0cce84b3bf?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
   },
 ];
 
@@ -453,51 +526,69 @@ export const categories = [
     id: 1,
     name: "Electronics",
     image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Latest gadgets and electronic devices",
   },
   {
     id: 2,
     name: "Fashion",
     image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Trendy clothing and accessories",
   },
   {
     id: 3,
     name: "Home & Living",
     image: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=500",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Everything for your home",
   },
   {
     id: 4,
     name: "Sports & Outdoors",
-    image: "https://images.unsplash.com/photo-1552550961-7c3ac6b2d713?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1684096758222-144a50683d3b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Outdoor gear and sports equipment",
   },
   {
     id: 5,
     name: "Health & Wellness",
-    image: "https://images.unsplash.com/photo-1593642532900-e3dbbc3dbf5f?w=500",
+    image:
+      "https://images.unsplash.com/photo-1619987396130-cda83fce794b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Products for your health and well-being",
   },
   {
     id: 6,
     name: "Beauty",
-    image: "https://images.unsplash.com/photo-1592401627451-b6a0549b2379?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1684407616442-8d5a1b7c978e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Beauty and skincare products",
   },
   {
     id: 7,
     name: "Toys & Games",
-    image: "https://images.unsplash.com/photo-1511942271435-7607d68b32d7?w=500",
+    image:
+      "https://plus.unsplash.com/premium_photo-1701984402171-53940cb4b8ae?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Toys, games, and entertainment",
   },
   {
     id: 8,
     name: "Food & Beverages",
-    image: "https://images.unsplash.com/photo-1584433306650-03d4a764ac45?w=500",
+    image:
+      "https://images.unsplash.com/photo-1654417958829-6156be64ec79?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    fallbackImage: FALLBACK_IMAGE,
     description: "Groceries, snacks, and beverages",
   },
 ];
+
+// Add a new helper function to handle image errors
+export const getImageWithFallback = (image, fallback = FALLBACK_IMAGE) => {
+  return image || fallback;
+};
 
 // Helper function to get products by category
 export const getProductsByCategory = (categoryName) => {

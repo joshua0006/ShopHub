@@ -41,13 +41,17 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <div className="container py-12">
-        <p className="text-center text-gray-600">Product not found</p>
+        <p className="text-center text-gray-100">Product not found</p>
       </div>
     );
   }
 
   return (
-    <main className="py-12">
+    <main className="min-h-screen bg-gradient-to-br from-blue-800 via-blue-500 to-blue-900 relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-grid-white/[0.1] -z-1" />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-900/40 to-transparent" />
+
       {showNotification && (
         <Notification
           message={notificationMessage}
@@ -57,10 +61,11 @@ export default function ProductDetail() {
           }}
         />
       )}
-      <div className="container">
+
+      <div className="container relative py-12">
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-gray-600 hover:text-primary mb-8 group"
+          className="flex items-center gap-2 text-blue-100 hover:text-white mb-8 group"
         >
           <ArrowLeft className="w-5 h-5 transition group-hover:-translate-x-1" />
           Back
@@ -69,78 +74,60 @@ export default function ProductDetail() {
           <div className="sticky top-24">
             <ImageCarousel images={product.images || [product.image]} />
           </div>
-          <div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
             <div className="space-y-6">
               <div>
-                <h1 className="text-4xl font-bold mb-2">{product.name}</h1>
+                <h1 className="text-4xl font-bold mb-2 text-white">
+                  {product.name}
+                </h1>
                 <div className="flex items-center gap-4">
-                  <span className="text-3xl font-bold text-primary">
+                  <span className="text-3xl font-bold text-blue-300">
                     ${product.price}
                   </span>
-                  <span className="text-sm text-gray-500">USD</span>
+                  <span className="text-sm text-blue-200">USD</span>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-blue-100 leading-relaxed">
                 {product.description}
               </p>
             </div>
             <div className="space-y-4">
-              <div className="inline-block bg-gray-100 px-3 py-1 rounded-full text-sm">
+              <div className="inline-block bg-blue-800/50 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-blue-100 border border-white/10">
                 Category: {product.category}
               </div>
               <div className="mt-8 border rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setShowSpecs(!showSpecs)}
-                  className="w-full px-4 py-3 bg-gray-50 flex items-center justify-between hover:bg-gray-100 transition-colors"
-                >
-                  <span className="font-medium">Product Specifications</span>
-                  {showSpecs ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {showSpecs && (
-                    <motion.div
-                      initial={{ height: 0 }}
-                      animate={{ height: "auto" }}
-                      exit={{ height: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="p-4 space-y-6">
-                        {Object.entries(specifications).map(
-                          ([title, specs]) => (
-                            <div key={title}>
-                              <h3 className="font-medium text-gray-900 mb-3">
-                                {title}
-                              </h3>
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {specs.map((spec) => (
-                                  <div
-                                    key={spec.label}
-                                    className="flex items-start gap-2"
-                                  >
-                                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                    <div>
-                                      <span className="block text-sm font-medium">
-                                        {spec.label}
-                                      </span>
-                                      <span className="text-sm text-gray-600">
-                                        {spec.value}
-                                      </span>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
+                <div className="w-full px-4 py-3 bg-gray-50">
+                  <span className="font-medium text-blue-700">
+                    Product Specifications
+                  </span>
+                </div>
+                <div className="p-4 space-y-6">
+                  {Object.entries(specifications).map(([title, specs]) => (
+                    <div key={title}>
+                      <h3 className="font-medium text-gray-100 mb-3">
+                        {title}
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {specs.map((spec) => (
+                          <div
+                            key={spec.label}
+                            className="flex items-start gap-2"
+                          >
+                            <Check className="w-5 h-5 text-[#FFD700] shrink-0 mt-0.5" />
+                            <div>
+                              <span className="block text-sm font-medium text-slate-200">
+                                {spec.label}
+                              </span>
+                              <span className="text-sm text-gray-300">
+                                {spec.value}
+                              </span>
                             </div>
-                          )
-                        )}
+                          </div>
+                        ))}
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
               </div>
               <button
                 onClick={() => {
@@ -148,7 +135,7 @@ export default function ProductDetail() {
                   setNotificationMessage(`${product.name} added to cart!`);
                   setShowNotification(true);
                 }}
-                className="w-full bg-primary text-white py-4 rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 text-lg font-medium"
+                className="w-full bg-white text-blue-900 py-4 rounded-xl hover:bg-blue-50 transition-colors flex items-center justify-center gap-2 text-lg font-medium"
               >
                 <ShoppingCart className="w-5 h-5" />
                 Add to Cart
@@ -158,6 +145,10 @@ export default function ProductDetail() {
         </div>
         <RelatedProducts currentProduct={product} products={products} />
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute -right-64 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl" />
+      <div className="absolute -left-64 bottom-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
     </main>
   );
 }

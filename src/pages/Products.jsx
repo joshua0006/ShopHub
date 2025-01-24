@@ -14,10 +14,14 @@ export default function Products() {
     : products;
 
   return (
-    <main className="py-16 bg-gradient-to-b from-white to-gray-50/50">
-      <div className="container">
+    <main className="min-h-screen bg-gradient-to-br from-blue-950 via-blue-800 to-primary relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-grid-white/[0.1] -z-1" />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-900/40 to-transparent" />
+
+      <div className="container relative py-16">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-center mb-8">
+          <h1 className="text-4xl font-bold text-center mb-8 text-white drop-shadow-lg">
             {categoryFilter ? categoryFilter : "All Products"}
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -28,8 +32,8 @@ export default function Products() {
               }}
               className={`px-6 py-2.5 rounded-full text-sm transition-all duration-300 ${
                 !categoryFilter
-                  ? "bg-primary text-white shadow-lg shadow-primary/25"
-                  : "bg-white hover:bg-gray-50 text-gray-700 border border-gray-200"
+                  ? "bg-white text-blue-900 shadow-lg shadow-blue-500/25"
+                  : "bg-blue-800/30 hover:bg-blue-700/40 text-white backdrop-blur-sm border border-white/20 hover:border-white/40"
               }`}
             >
               All Products
@@ -45,10 +49,10 @@ export default function Products() {
                   );
                   setSearchParams(newSearchParams);
                 }}
-                className={`px-4 py-2 rounded-full text-sm transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
                   categoryFilter === category.name
-                    ? "bg-primary text-white"
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                    ? "bg-white text-blue-900 shadow-lg shadow-blue-500/25"
+                    : "bg-blue-800/30 hover:bg-blue-700/40 text-white backdrop-blur-sm border border-white/20 hover:border-white/40"
                 }`}
               >
                 {category.name}
@@ -63,22 +67,26 @@ export default function Products() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-semibold text-gray-600 mb-4">
+          <div className="text-center py-12 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+            <h2 className="text-2xl font-semibold text-white mb-4">
               No products found
             </h2>
-            <p className="text-gray-500 mb-8">
+            <p className="text-blue-100 mb-8">
               We couldn't find any products in this category.
             </p>
             <Link
               to="/products"
-              className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition"
+              className="inline-block bg-white text-blue-900 px-6 py-3 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg"
             >
               View All Products
             </Link>
           </div>
         )}
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute -right-64 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl" />
+      <div className="absolute -left-64 bottom-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
     </main>
   );
 }
